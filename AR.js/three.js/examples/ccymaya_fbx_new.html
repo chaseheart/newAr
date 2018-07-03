@@ -23,7 +23,7 @@
 
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
-<div id="result" style="border:2px solid red; color:red;">maya_fbx_new</div>
+<div id="result" style="border:2px solid red; color:red;">maya_fbx_new2</div>
 <div id="container"></div>
 <script>
 	//////////////////////////////////////////////////////////////////////////////////
@@ -210,15 +210,8 @@
 	
 	// model
 	var loader = new THREE.FBXLoader();
-	loader.load( 'models/0701/maya_fbx/maya_fbx_ma.fbx, function ( object ) {				
-	//object.mixer = new THREE.AnimationMixer( object );
-		
-			//mixers.push( object.mixer );
-
-			//var action = object.mixer.clipAction( object.animations[ 0 ] );
-				//action.play();
-		
-		object.scale.x =  object.scale.y =  object.scale.z = 0.03;
+	loader.load( 'models/0701/maya_fbx/maya_fbx_ma.fbx', function ( object ) {			
+		object.scale.x =  object.scale.y =  object.scale.z = 0.005;
 		
 		object.rotation.x = Math.PI * 1.2 ;
 		object.rotation.y = Math.PI * 1.7 ;
