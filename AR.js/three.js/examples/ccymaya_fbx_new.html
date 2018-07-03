@@ -23,7 +23,7 @@
 
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
-<div id="result" style="border:2px solid red; color:red;">maya_fbx</div>
+<div id="result" style="border:2px solid red; color:red;">maya_fbx_new</div>
 <div id="container"></div>
 <script>
 	//////////////////////////////////////////////////////////////////////////////////
@@ -62,57 +62,57 @@
 	////////////////////////////////////////////////////////////////////////////////
 	//          handle arToolkitSource
 	////////////////////////////////////////////////////////////////////////////////
-	var arToolkitSource = new THREEx.ArToolkitSource({
-		// to read from the webcam 
-		sourceType : 'webcam',
-		// // to read from an image
-		// sourceType : 'image',
-		// sourceUrl : THREEx.ArToolkitContext.baseURL + '../data/images/img.jpg',		
-		// sourceUrl : THREEx.ArToolkitContext.baseURL + '../data/images/armchair.jpg',		
-		// to read from a video
-		// sourceType : 'video',
-		// sourceUrl : THREEx.ArToolkitContext.baseURL + '../data/videos/headtracking.mp4',		
-	})
-	arToolkitSource.init(function onReady(){
-		onResize()
-	})
+// 	var arToolkitSource = new THREEx.ArToolkitSource({
+// 		// to read from the webcam 
+// 		sourceType : 'webcam',
+// 		// // to read from an image
+// 		// sourceType : 'image',
+// 		// sourceUrl : THREEx.ArToolkitContext.baseURL + '../data/images/img.jpg',		
+// 		// sourceUrl : THREEx.ArToolkitContext.baseURL + '../data/images/armchair.jpg',		
+// 		// to read from a video
+// 		// sourceType : 'video',
+// 		// sourceUrl : THREEx.ArToolkitContext.baseURL + '../data/videos/headtracking.mp4',		
+// 	})
+// 	arToolkitSource.init(function onReady(){
+// 		onResize()
+// 	})
 	
-	// handle resize
-	window.addEventListener('resize', function(){
-		onResize()
-	})
-	function onResize(){
-		arToolkitSource.onResizeElement()	
-		arToolkitSource.copyElementSizeTo(renderer.domElement)	
-		if( arToolkitContext.arController !== null ){
-			arToolkitSource.copyElementSizeTo(arToolkitContext.arController.canvas)	
-		}	
-	}
+// 	// handle resize
+// 	window.addEventListener('resize', function(){
+// 		onResize()
+// 	})
+// 	function onResize(){
+// 		arToolkitSource.onResizeElement()	
+// 		arToolkitSource.copyElementSizeTo(renderer.domElement)	
+// 		if( arToolkitContext.arController !== null ){
+// 			arToolkitSource.copyElementSizeTo(arToolkitContext.arController.canvas)	
+// 		}	
+// 	}
 	////////////////////////////////////////////////////////////////////////////////
 	//          initialize arToolkitContext
 	////////////////////////////////////////////////////////////////////////////////	
 	// create atToolkitContext
-	var arToolkitContext = new THREEx.ArToolkitContext({
-		cameraParametersUrl: THREEx.ArToolkitContext.baseURL + '../data/data/camera_para.dat',
-		// debug: true,
-		// detectionMode: 'mono_and_matrix',
-		detectionMode: 'mono',
-		// detectionMode: 'color_and_matrix',
-		// matrixCodeType: '3x3',
-		canvasWidth: 80*3,
-		canvasHeight: 60*3,
-		maxDetectionRate: 30,
-	})
+// 	var arToolkitContext = new THREEx.ArToolkitContext({
+// 		cameraParametersUrl: THREEx.ArToolkitContext.baseURL + '../data/data/camera_para.dat',
+// 		// debug: true,
+// 		// detectionMode: 'mono_and_matrix',
+// 		detectionMode: 'mono',
+// 		// detectionMode: 'color_and_matrix',
+// 		// matrixCodeType: '3x3',
+// 		canvasWidth: 80*3,
+// 		canvasHeight: 60*3,
+// 		maxDetectionRate: 30,
+// 	})
 	// initialize it
-	arToolkitContext.init(function onCompleted(){
-		// copy projection matrix to camera
-		camera.projectionMatrix.copy( arToolkitContext.getProjectionMatrix() );
-	})
-	// update artoolkit on every frame
-	onRenderFcts.push(function(){
-		if( arToolkitSource.ready === false )	return
-		arToolkitContext.update( arToolkitSource.domElement )
-	})
+// 	arToolkitContext.init(function onCompleted(){
+// 		// copy projection matrix to camera
+// 		camera.projectionMatrix.copy( arToolkitContext.getProjectionMatrix() );
+// 	})
+// 	// update artoolkit on every frame
+// 	onRenderFcts.push(function(){
+// 		if( arToolkitSource.ready === false )	return
+// 		arToolkitContext.update( arToolkitSource.domElement )
+// 	})
 	
 	
 	////////////////////////////////////////////////////////////////////////////////
