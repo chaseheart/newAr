@@ -29,9 +29,7 @@
 	</head>
 
 	<body>
-		<div id="info">
-		<a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - FBXLoader - Nurbs
-		</div>
+		<div id="info">arPro</div>
 
 		<script src="../build/three.js"></script>
 
@@ -87,7 +85,7 @@
 				// model
 				var loader = new THREE.FBXLoader();
 				loader.load( 'models/0701/maya_fbx/maya_fbx_ma.fbx', function( object ) {
-
+					object.scale.x =  object.scale.y =  object.scale.z = 0.03;
 					scene.add( object );
 
 				} );
