@@ -61,11 +61,10 @@ window.ARThreeOnLoad = function() {
 		var rotationV = 0;
 		var rotationTarget = 0;
 		var onRenderFcts= [];
-evev(ev);
-		function evev(ev) {
+		renderer.domElement.addEventListener('click', function(ev) {
 			ev.preventDefault();
 			rotationTarget += 1;
-		}
+		}, false);
 		
 
 
