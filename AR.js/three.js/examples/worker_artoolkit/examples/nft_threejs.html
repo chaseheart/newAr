@@ -40,7 +40,7 @@ html,body {
 <script>
 let location_path='//'+location.host+'/AR.js/';
 window.ARThreeOnLoad = function() {
-	ARController.getUserMediaThreeScene({maxARVideoSize: 320, cameraParam: location_path + '../data/data/camera_para.dat', 
+	ARController.getUserMediaThreeScene({maxARVideoSize: 320, cameraParam: location_path + 'data/data/camera_para.dat', 
 	onSuccess: function(arScene, arController, arCamera) {
 		document.body.className = arController.orientation;
 		var renderer = new THREE.WebGLRenderer({antialias: true});
