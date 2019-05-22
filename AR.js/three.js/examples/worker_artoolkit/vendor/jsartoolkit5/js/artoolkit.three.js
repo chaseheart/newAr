@@ -300,7 +300,7 @@
 				obj = this.threeNFTMarkers[ev.data.marker.id];
 
 				if (obj) {
-					obj.matrix.elements.set(ev.data.matrix);
+					obj.matrix.elements = ev.data.matrix;
 					obj.visible = true;
 				}
 			});
