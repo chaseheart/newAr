@@ -89,7 +89,7 @@ window.ARThreeOnLoad = function() {
 		torus.material.shading = THREE.FlatShading;
 		torus.position.z = 0.5;
 		torus.rotation.x = Math.PI/2;
-		arController.loadNFTMarker(location_path+'data/dataNFT/earth/test', function(markerId) {
+		arController.loadNFTMarker(location_path+'data/dataNFT/test/test', function(markerId) {
 			var markerRoot = arController.createThreeNFTMarker(markerId);
 			var loader = new THREE.ColladaLoader();
 			loader.options.convertUpAxis = true;
