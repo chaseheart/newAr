@@ -38,11 +38,12 @@ html,body {
 <script src="../../vendor/three.js/KeyFrameAnimation.js"></script>
 
 <script>
-let location_path='//'+location.host+'/newAr/AR.js/';
+let location_path='https://'+location.host+'/newAr/AR.js/';
 window.ARThreeOnLoad = function() {
 	ARController.getUserMediaThreeScene({maxARVideoSize: 320, cameraParam: location_path + 'data/data/camera_para.dat', 
 	onSuccess: function(arScene, arController, arCamera) {
 		document.body.className = arController.orientation;
+		console.log("in");
 		var renderer = new THREE.WebGLRenderer({antialias: true});
 		if (arController.orientation == 'portrait') {
 			var w = (window.innerWidth / arController.videoHeight) * arController.videoWidth;
