@@ -36,18 +36,21 @@
 			@param {function} onError - Called if the initialization fails with the error encountered.
 		*/
 		ARController.getUserMediaThreeScene = function(configuration) {
+			alert(1);
 			var obj = {};
 			for (var i in configuration) {
 				obj[i] = configuration[i];
 			}
+			alert(2);
 			var onSuccess = configuration.onSuccess;
 
 			obj.onSuccess = function(arController, arCameraParam) {
 				var scenes = arController.createThreeScene();
 				onSuccess(scenes, arController, arCameraParam);
 			};
-
+			alert(3);
 			var video = this.getUserMediaARController(obj);
+			alert(4);
 			return video;
 		};
 
