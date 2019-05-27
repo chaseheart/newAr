@@ -50,7 +50,7 @@
 			};
 			alert(3);
 			var video = this.getUserMediaARController(obj);
-			alert(4);
+			alert(video);
 			return video;
 		};
 
